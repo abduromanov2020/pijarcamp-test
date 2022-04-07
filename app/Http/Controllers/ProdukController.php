@@ -17,7 +17,7 @@ class ProdukController extends Controller
         $data = [
             'produks' => Produk::all()
         ];
-        return view('home', $data);
+        return view('produk', $data);
     }
 
     /**
@@ -47,7 +47,7 @@ class ProdukController extends Controller
 
         Produk::create($validatedData);
 
-        return redirect('/');
+        return redirect('/produk');
     }
 
     /**
@@ -67,14 +67,14 @@ class ProdukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(produk $produk, $id)
+    public function edit($id)
     {
 
-        $produks = $produk->find($id);
+        $produks = Produk::find($id);
         $data = [
             'produk' => $produks
         ];
-        return view('produkCreate', $data);
+        return view('produkEdit', $data);
     }
 
     /**
@@ -97,7 +97,7 @@ class ProdukController extends Controller
 
         $Produks->update($validatedData);
 
-        return redirect('/');
+        return redirect('/produk');
     }
 
     /**
@@ -108,6 +108,8 @@ class ProdukController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Produk::destroy('id', $id);
+
+        return redirect('/produk');
     }
 }

@@ -14,42 +14,8 @@
 </head>
 
 <body class="bg-black">
-    <div class="container text-center text-white">
-        <h1 class="p-5">Level 3 - Tugas 10</h1>
-
-        <div>
-            <a href="produk/create" class="btn py-2 px-3 btn-primary rounded-5 mb-4">Tambah</a>
-        </div>
-        <div class="container">
-            <table class="table table-light table-responsive">
-                <thead>
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col">Produk</th>
-                        <th scope="col">Keterangan</th>
-                        <th scope="col">Harga</th>
-                        <th scope="col">Jumlah</th>
-                        <th scope="col">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $i=1; foreach($produks as $produk): ?>
-                    <tr>
-                        <td>{{ $i++ }}</td>
-                        <td>{{ $produk->nama_produk }}</td>
-                        <td>{{ $produk->keterangan }}</td>
-                        <td>{{ $produk->harga }}</td>
-                        <td>{{ $produk->jumlah }}</td>
-                        <td>
-                            <a href="/produk/{{ $produk->id }}/edit"
-                                class="btn py-2 px-3 btn-warning rounded-5">Edit</a>
-                            <a href="/delete" class="btn py-2 px-3 btn-danger rounded-5">Delete</a>
-                        </td>
-                    </tr>
-                    <?php endforeach ?>
-                </tbody>
-            </table>
-        </div>
+    <div class="container text-center mt-5">
+        <a href="/produk" class="btn py-2 px-3 btn-light rounded-5 mb-4 font-bold">Tabel Produk</a>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

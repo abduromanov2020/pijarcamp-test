@@ -15,27 +15,31 @@
 
 <body class="bg-black">
     <div class="container text-white">
-        <h1 class="p-5 text-center">Tambah Produk</h1>
-        <form method="post" action="/">
+        <h1 class="p-5 text-center">Edit Produk</h1>
+        <form method="post" action="/produk/{{ $produk->id }}">
+            @method('patch')
             @csrf
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Nama Produk</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="nama_produk" value={{ $produk
-                    }}>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="nama_produk" value={{
+                    $produk->nama_produk }}>
             </div>
             <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Keterangan</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" name="keterangan">
+                <input type="text" class="form-control" id="formGroupExampleInput2" name="keterangan" value={{
+                    $produk->keterangan }}>
             </div>
             <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Harga</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" name="harga">
+                <input type="text" class="form-control" id="formGroupExampleInput2" name="harga" value={{ $produk->harga
+                }}>
             </div>
             <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Jumlah</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" name="jumlah">
+                <input type="text" class="form-control" id="formGroupExampleInput2" name="jumlah" value={{
+                    $produk->jumlah }}>
             </div>
-            <button type="submit" class="btn btn-primary">Tambah</button>
+            <button type="submit" class="btn btn-primary">Edit</button>
         </form>
     </div>
 

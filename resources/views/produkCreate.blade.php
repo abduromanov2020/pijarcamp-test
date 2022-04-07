@@ -16,7 +16,7 @@
 <body class="bg-black">
     <div class="container text-white">
         <h1 class="p-5 text-center">Tambah Produk</h1>
-        <form method="post" action="/">
+        <form method="post" action="/produk">
             @csrf
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Nama Produk</label>
